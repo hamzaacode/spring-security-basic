@@ -1,6 +1,6 @@
 package com.example.springsecuritybasic.config;
 
-import com.example.springsecuritybasic.model.Customer;
+import com.example.springsecuritybasic.mode.Customer;
 import com.example.springsecuritybasic.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
