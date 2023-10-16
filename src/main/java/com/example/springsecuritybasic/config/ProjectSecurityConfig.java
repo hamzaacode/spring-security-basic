@@ -13,7 +13,7 @@ public class ProjectSecurityConfig {
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests().requestMatchers("/userInfo").authenticated();
-        http.authorizeHttpRequests().requestMatchers("/welcome", "/getContactInfo").permitAll();
+        http.authorizeHttpRequests().requestMatchers("/welcome", "/getContactInfo","/registe").permitAll();
         http.formLogin();
         http.httpBasic();
         return (SecurityFilterChain) http.build();
