@@ -18,7 +18,6 @@ public class ProjectSecurityConfig {
         http.httpBasic();
         return (SecurityFilterChain) http.build();
     }
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();

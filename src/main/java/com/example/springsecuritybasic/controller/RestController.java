@@ -9,12 +9,10 @@ public class RestController {
     public String welcome() {
         return "Welcome to spring security test project";
     }
-
     @GetMapping("/userInfo")
     public String getUserInfo() {
         return "get user info";
     }
-
     @GetMapping("/getContactInfo")
     public String getContactInfo() {
         return "get contact info";
