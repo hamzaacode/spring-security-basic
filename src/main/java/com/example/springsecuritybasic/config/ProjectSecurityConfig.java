@@ -12,12 +12,15 @@ public class ProjectSecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests().requestMatchers("/userInfo").authenticated();
-        http.authorizeHttpRequests().requestMatchers("/welcome", "/getContactInfo","/registe").permitAll();
-        http.formLogin();
-        http.httpBasic();
-        return (SecurityFilterChain) http.build();
+        http.csrf().disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/userInfo").authenticated()
+                .requestMatchers("/welcome", "/getContactInfo", "/register").permitAll()
+                .and().formLogin()
+                .and().httpBasic();
+        return http.build();
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
